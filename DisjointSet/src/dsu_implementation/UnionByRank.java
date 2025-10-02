@@ -3,19 +3,21 @@ package dsu_implementation;
 /**
  * A simple implementation of the Disjoint Set (Union-Find) Data Structure
  */
-public class SimpleDsu {
+public class UnionByRank {
 
-    // Public to facilitate the studies
     private final int[] parent;
+    private final int[] rank;
 
-    public SimpleDsu(int size) {
+    public UnionByRank(int size) {
 
         // Initialize the array with length = size
         parent = new int[size];
+        rank = new int[size];
 
         for (int i = 0; i < size; i++) {
             // Define all set as its own subset
             parent[i] = i;
+            rank[i] = 1;
         }
     }
 
@@ -26,11 +28,11 @@ public class SimpleDsu {
      */
     public int find(int x) {
 
-        if (this.parent[x] == x)
+        if (parent[x] == x)
             return x;
 
         else
-            return this.find(parent[x]);
+            return find(parent[x]);
 
     }
 
@@ -43,7 +45,18 @@ public class SimpleDsu {
         if (rootX == rootY)
             return;
 
-        this.parent[rootY] = rootX;
+        // Union by rank
+        // Attach the smaller rank tree under the root of the higher rank tree
+        if (rank[rootX] < rank[rootY])
+            parent[rootX] = rootY;
+
+        else if (rank[rootX] > rank[rootY])
+            parent[rootY] = rootX;
+        // If ranks are same, then make one as root of another and increment its rank by one
+        else {
+            parent[rootX] = rootY;
+            rank[rootY] += 1;
+        }
     }
 
     public int[] getParent() {
