@@ -38,6 +38,38 @@ public class Main {
         System.out.print("\t- Post Order: ");
         tree.traversePostOrder();
 
+        System.out.println();
+
+        System.out.println("Height of the Tree: " + tree.height());
+
+        System.out.println("Min value of the Tree: " + tree.min());
+
+        // Initiating a second tree
+        Tree secondTree = new Tree();
+
+        // Populating Our Second Tree
+        secondTree.insert(20);
+        secondTree.insert(10);
+        secondTree.insert(30);
+        secondTree.insert(6);
+        secondTree.insert(14);
+        secondTree.insert(24);
+        secondTree.insert(3);
+        secondTree.insert(8);
+        secondTree.insert(26);
+
+        System.out.println("They are equal: " + tree.equals(secondTree));
+
+        // Checking if the Tree is a Binary Search Tree
+        System.out.println("Tree is a Binary Search Tree: " + tree.isBinarySearchTree());
+
+        tree.insert(19);
+
+        // Checking if the Tree is a Binary Search Tree after a insertion
+        System.out.println("Tree is a Binary Search Tree: " + tree.isBinarySearchTree());
+
+
+
     }
 
     // Explaining Recursive

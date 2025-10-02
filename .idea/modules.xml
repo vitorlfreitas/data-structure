@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Array/Array.iml" filepath="$PROJECT_DIR$/Array/Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BuildingTree/BuildingTree.iml" filepath="$PROJECT_DIR$/BuildingTree/BuildingTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RecursionLoop/RecursionLoop.iml" filepath="$PROJECT_DIR$/RecursionLoop/RecursionLoop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/data-structure.iml" filepath="$PROJECT_DIR$/.idea/data-structure.iml" />
+    </modules>
+  </component>
+</project>
